@@ -31,7 +31,7 @@ namespace Stek
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
                                 case 1:
-                                    try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Эдемент добавлен в стек!"); }
+                                    try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Элемент добавлен в стек!"); }
                                     catch { Console.WriteLine("Введён неверный символ!"); }
                                     continue;
                                 case 2: stek.POP(); Console.WriteLine("Элемент удалён!"); continue;
@@ -55,9 +55,9 @@ namespace Stek
 
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
-                                case 1: Console.WriteLine("Введите символы"); list.Add(Console.ReadLine()); continue;
-                                case 2: Console.WriteLine("Введите символы"); list.AddWithSort(Console.ReadLine()); continue;
-                                case 3: Console.WriteLine("Введите символы"); list.RemoveAt(list.IndexOf(Console.ReadLine())); continue;
+                                case 1: Console.WriteLine("Введите символы"); list.Add(Console.ReadLine()); Console.WriteLine("Элемент добавлен в список!"); continue;
+                                case 2: Console.WriteLine("Введите символы"); list.AddWithSort(Console.ReadLine()); Console.WriteLine("Элемент добавлен в список с сортировкой!"); continue;
+                                case 3: Console.WriteLine("Введите символы"); list.RemoveAt(list.IndexOf(Console.ReadLine())); Console.WriteLine("Элемент удалён из списка!"); continue;
                                 case 4: Console.WriteLine("Введите символы"); Console.WriteLine(list.IndexOf(Console.ReadLine()) + " - индекс элемента\n"); continue;
                                 case 5: list.Clear(); continue;
                                 default: flagList = false; break;
