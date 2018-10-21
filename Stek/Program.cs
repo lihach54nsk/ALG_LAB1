@@ -31,12 +31,12 @@ namespace Stek
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
                                 case 1:
-                                    try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); }
+                                    try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Эдемент добавлен в стек!"); }
                                     catch { Console.WriteLine("Введён неверный символ!"); }
                                     continue;
-                                case 2: stek.POP(); continue;
-                                case 3: Console.WriteLine(stek.TOP()); continue;
-                                case 4: stek.CLEAR(); continue;
+                                case 2: stek.POP(); Console.WriteLine("Элемент удалён!"); continue;
+                                case 3: Console.WriteLine("Элемент в вершине - " + stek.TOP()); continue;
+                                case 4: stek.CLEAR();Console.WriteLine("Стек очищен!"); continue;
                                 case 5:
                                     if (stek.IsEmpty() == true) Console.WriteLine("Стек пуст!");
                                     else Console.WriteLine("Стек не пуст!");
