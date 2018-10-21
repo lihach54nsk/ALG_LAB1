@@ -33,7 +33,7 @@ namespace Stek
 
         public T TOP() => Value[0]; // вернуть значение в вершине стека
 
-        public void CLEAR() { Next = 0; } // очистка стека
+        public void CLEAR() { Value[0] = default(T); Next = 0; } // очистка стека
 
         public bool IsEmpty() // пустой ли?
         {
