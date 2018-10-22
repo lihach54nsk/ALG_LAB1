@@ -31,17 +31,17 @@ namespace Stek
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
                                 case 1:
-                                    try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Элемент добавлен в стек!"); }
-                                    catch { Console.WriteLine("Стек переполнен или введён неверный символ!"); }
+                                    try { Console.WriteLine(); stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Элемент добавлен в стек!"); }
+                                    catch { Console.WriteLine("Стек переполнен или введён неверный символ!\n"); }
                                     continue;
-                                case 2: stek.POP(); Console.WriteLine("Элемент удалён!"); continue;
-                                case 3: Console.WriteLine("Элемент в вершине - " + stek.TOP()); continue;
-                                case 4: stek.CLEAR(); Console.WriteLine("Стек очищен!"); continue;
+                                case 2: Console.WriteLine(); stek.POP(); Console.WriteLine("Элемент удалён!"); Console.WriteLine(); continue;
+                                case 3: Console.WriteLine(); Console.WriteLine("Элемент в вершине - " + stek.TOP()); Console.WriteLine(); continue;
+                                case 4: stek.CLEAR(); Console.WriteLine("Стек очищен!"); Console.WriteLine(); continue;
                                 case 5:
                                     if (stek.IsEmpty() == true) Console.WriteLine("Стек пуст!");
                                     else Console.WriteLine("Стек не пуст!");
                                     continue;
-                                case 6: for (int i = stek.GetLength(); i != 0; i--) stek.Print(i - 1); continue;
+                                case 6: Console.WriteLine(); for (int i = stek.GetLength(); i != 0; i--) stek.Print(i - 1); continue;
                                 default: flagStack = false; break;
                             }
                         }
