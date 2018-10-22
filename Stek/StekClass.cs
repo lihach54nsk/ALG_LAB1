@@ -27,7 +27,7 @@ namespace Stek
             if (IsEmpty() == true) throw new InvalidOperationException("Stek pust!");
             else
             {
-                Value[--Next] = default(T);
+                Next--;
             }
         }
 
