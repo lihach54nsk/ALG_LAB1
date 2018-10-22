@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LinkedListApp
 {
-    class LinkedList1<T> : IList<T> where T : IComparable<T>
+    class LinkedList1<T> : IList<T> where T:IComparable<T>
     {
         class LinkedListNode1
         {
@@ -40,7 +40,7 @@ namespace LinkedListApp
 
         public void Add(T item)
         {
-            _head = _head == null ? new LinkedListNode1(item, null) : new LinkedListNode1(item, _head);
+            _head = new LinkedListNode1(item, _head);
             Count++;
         }
 
@@ -48,16 +48,16 @@ namespace LinkedListApp
         {
             var last = _head;
 
-            if (_head == null || _head.Value.CompareTo(item) > 0)
+            if(_head==null || _head.Value.CompareTo(item) > 0)
             {
                 Add(item);
                 return;
             }
 
-            for (int i = 1; i < Count; i++)
+            for (int i = 1; i < Count; i++) 
             {
                 var current = last.Next;
-                if (current.Value.CompareTo(item) < 0)
+                if (current.Value.CompareTo(item) > 0)
                 {
                     last.Next = new LinkedListNode1(item, current);
                     Count++;
@@ -65,8 +65,8 @@ namespace LinkedListApp
                 }
                 last = last.Next;
             }
-
-            last.Next = new LinkedListNode1(item, null);
+            Count++;
+            last.Next = new LinkedListNode1(item, last.Next);
         }
 
         public void Clear()
@@ -112,13 +112,13 @@ namespace LinkedListApp
 
         public void Insert(int index, T item)
         {
-            if (index == 0)
+            if(index==0)
             {
                 Add(item);
                 return;
             }
 
-            var node = GetNode(index - 1);
+            var node = GetNode(index-1);
 
             node.Next = new LinkedListNode1(item, node.Next);
 
@@ -128,7 +128,7 @@ namespace LinkedListApp
         public bool Remove(T item)
         {
             var lastItem = _head;
-            if (lastItem.Value.CompareTo(item) == 0)
+            if(lastItem.Value.CompareTo(item)==0)
             {
                 _head = _head.Next;
                 Count--;
@@ -151,7 +151,7 @@ namespace LinkedListApp
         public void RemoveAt(int index)
         {
             if (index >= Count) throw new IndexOutOfRangeException();
-            if (index == 0)
+            if(index==0)
             {
                 _head = _head.Next;
                 Count--;
@@ -166,7 +166,7 @@ namespace LinkedListApp
         {
             var currentNode = _head;
 
-            if (index >= Count) throw new IndexOutOfRangeException();
+            if(index>=Count) throw new IndexOutOfRangeException();
 
             for (int i = 0; i < index; i++)
             {
