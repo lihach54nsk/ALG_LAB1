@@ -33,7 +33,7 @@ namespace Stek
 
         public T TOP()
         {
-            if (IsEmpty()==false) return Value[Next - 1];
+            if (IsEmpty() == false) return Value[Next - 1];
             else throw new InvalidOperationException("Stek pust!");
         } // вернуть значение в вершине стека
 
