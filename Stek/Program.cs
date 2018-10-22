@@ -27,7 +27,7 @@ namespace Stek
 
                         while (flagStack == true) // стек
                         {
-                            Console.WriteLine("Выберите действие:\n 1 - добавление\n 2 - удаление\n 3 - достать элемент в вершине\n 4 - очистить\n 5 - проверить на пустоту\n 0 - выход");
+                            Console.WriteLine("Выберите действие:\n 1 - добавление\n 2 - удаление\n 3 - достать элемент в вершине\n 4 - очистить\n 5 - проверить на пустоту\n 6 - Печать стека\n 0 - выход");
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
                                 case 1:
@@ -41,6 +41,7 @@ namespace Stek
                                     if (stek.IsEmpty() == true) Console.WriteLine("Стек пуст!");
                                     else Console.WriteLine("Стек не пуст!");
                                     continue;
+                                case 6: for (int i = stek.GetLength(); i != 0; i--) stek.Print(i - 1); continue;
                                 default: flagStack = false; break;
                             }
                         }

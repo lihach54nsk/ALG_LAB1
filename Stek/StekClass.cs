@@ -11,6 +11,8 @@ namespace Stek
         T[] Value;
         int Next;
 
+        public int GetLength() => Next;
+
         public Stack(int length) // конструктор с параметрами
         {
             Value = new T[length];
@@ -29,6 +31,11 @@ namespace Stek
             {
                 Next--;
             }
+        }
+
+        public void Print(int index)
+        {
+            Console.WriteLine(Value[index]);
         }
 
         public T TOP()
