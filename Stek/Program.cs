@@ -32,11 +32,11 @@ namespace Stek
                             {
                                 case 1:
                                     try { stek.PUSH(Convert.ToInt32(Console.ReadLine())); Console.WriteLine("Элемент добавлен в стек!"); }
-                                    catch { Console.WriteLine("Введён неверный символ!"); }
+                                    catch { Console.WriteLine("Стек переполнен или введён неверный символ!"); }
                                     continue;
                                 case 2: stek.POP(); Console.WriteLine("Элемент удалён!"); continue;
                                 case 3: Console.WriteLine("Элемент в вершине - " + stek.TOP()); continue;
-                                case 4: stek.CLEAR();Console.WriteLine("Стек очищен!"); continue;
+                                case 4: stek.CLEAR(); Console.WriteLine("Стек очищен!"); continue;
                                 case 5:
                                     if (stek.IsEmpty() == true) Console.WriteLine("Стек пуст!");
                                     else Console.WriteLine("Стек не пуст!");
@@ -47,19 +47,20 @@ namespace Stek
                         continue;
 
                     case 2:
-                        LinkedList1<string> list = new LinkedList1<string>();
+                        LinkedList1<char> list = new LinkedList1<char>();
 
                         while (flagList == true)
                         {
-                            Console.WriteLine("1 - вставка\n  2 - вставка с сортировкой\n 3 - удаление по значению\n 4 - поиск элемента\n 5 - очистка списка\n 0 - выход");
+                            Console.WriteLine("1 - вставка\n  2 - вставка с сохранением упорядоченности\n 3 - удаление по значению\n 4 - поиск элемента\n 5 - печать списка\n 6 - очистка списка\n 0 - выход");
 
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
-                                case 1: Console.WriteLine("Введите символы"); list.Add(Console.ReadLine()); Console.WriteLine("Элемент добавлен в список!"); continue;
-                                case 2: Console.WriteLine("Введите символы"); list.AddWithSort(Console.ReadLine()); Console.WriteLine("Элемент добавлен в список с сортировкой!"); continue;
-                                case 3: Console.WriteLine("Введите символы"); list.RemoveAt(list.IndexOf(Console.ReadLine())); Console.WriteLine("Элемент удалён из списка!"); continue;
-                                case 4: Console.WriteLine("Введите символы"); Console.WriteLine(list.IndexOf(Console.ReadLine()) + " - индекс элемента\n"); continue;
-                                case 5: list.Clear(); continue;
+                                case 1: Console.WriteLine("Введите символы"); list.Add(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список!"); continue;
+                                case 2: Console.WriteLine("Введите символы"); list.AddWithSort(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список с сортировкой!"); continue;
+                                case 3: Console.WriteLine("Введите символы"); list.RemoveAt(list.IndexOf(Console.ReadLine()[0])); Console.WriteLine("Элемент удалён из списка!"); continue;
+                                case 4: Console.WriteLine("Введите символы"); Console.WriteLine(list.IndexOf(Console.ReadLine()[0]) + " - индекс элемента\n"); continue;
+                                case 5: foreach (var a in list) { Console.WriteLine(a + " "); } continue;
+                                case 6: list.Clear(); continue;
                                 default: flagList = false; break;
                             }
                         }

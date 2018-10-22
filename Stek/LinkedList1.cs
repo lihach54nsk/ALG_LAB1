@@ -48,7 +48,7 @@ namespace LinkedListApp
         {
             var last = _head;
 
-            if (_head == null || _head.Value.CompareTo(item) < 0)
+            if (_head == null || _head.Value.CompareTo(item) > 0)
             {
                 Add(item);
                 return;

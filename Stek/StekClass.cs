@@ -18,7 +18,7 @@ namespace Stek
 
         public void PUSH(T x) // добавление в стек
         {
-            if (Next == Value.Length) throw new InvalidOperationException("Stek perepolnen!");
+            if (Next == Value.Length) { Console.WriteLine("Стек переполнен!"); throw new InvalidOperationException("Stek perepolnen!"); }
             else Value[Next++] = x;
         }
 
