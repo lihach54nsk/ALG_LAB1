@@ -56,11 +56,11 @@ namespace Stek
 
                             switch (Convert.ToInt32(Console.ReadLine()))
                             {
-                                case 1: Console.WriteLine("Введите символы"); list.Add(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список!"); continue;
-                                case 2: Console.WriteLine("Введите символы"); list.AddWithSort(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список с сортировкой!"); continue;
-                                case 3: Console.WriteLine("Введите символы"); list.RemoveAt(list.IndexOf(Console.ReadLine()[0])); Console.WriteLine("Элемент удалён из списка!"); continue;
-                                case 4: Console.WriteLine("Введите символы"); Console.WriteLine(list.IndexOf(Console.ReadLine()[0]) + " - индекс элемента\n"); continue;
-                                case 5: foreach (var a in list) { Console.WriteLine(a + " "); } continue;
+                                case 1: Console.WriteLine("Введите символы: "); list.Add(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список!"); continue;
+                                case 2: Console.WriteLine("Введите символы: "); list.AddWithSort(Console.ReadLine()[0]); Console.WriteLine("Элемент добавлен в список с сортировкой!"); continue;
+                                case 3: Console.WriteLine("Введите символы: "); list.RemoveAt(list.IndexOf(Console.ReadLine()[0])); Console.WriteLine("Элемент удалён из списка!"); continue;
+                                case 4: Console.WriteLine("Введите символы: "); Console.WriteLine(list.IndexOf(Console.ReadLine()[0]) + " - индекс элемента\n"); continue;
+                                case 5: foreach (var a in list) { Console.Write(a + " "); } Console.WriteLine(); continue;
                                 case 6: list.Clear(); continue;
                                 default: flagList = false; break;
                             }
